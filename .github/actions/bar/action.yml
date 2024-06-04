@@ -1,0 +1,8 @@
+name: Bar                                    # アクション名
+description: |                               # アクションの概要
+  bar action
+runs:
+  using: composite                           # アクションの実装方式
+  steps:                                     # アクションのメインロジック
+    - run: echo "bar"
+      shell: bash

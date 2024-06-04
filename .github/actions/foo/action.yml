@@ -1,0 +1,10 @@
+name: Foo                                    # アクション名
+description: |                               # アクションの概要
+  foo action
+runs:
+  using: composite                           # アクションの実装方式
+  steps:                                     # アクションのメインロジック
+    - uses: actions/checkout@v4              # ローカルアクション呼び出し前にチェックアウト
+    - run: echo "foo"
+      shell: bash
+    - uses: ./.github/actions/bar/          # ローカルアクションの呼び出し
